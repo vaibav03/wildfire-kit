@@ -8,10 +8,12 @@ player's Claude paints water to save it (or, with a human YES, sets fire to a ne
 - **Claude Code** installed (`claude` in your terminal).
 - **Edit access to the Miro board**: your instructor invites you. Accept the invite in your email,
   then open the board (link in `board.json` → `boardUrl`). You must be able to **edit**.
-- **The Miro MCP connected in Claude Code**: start `claude` in the `wildfire-kit` folder and type
-  `/plugin install miro@claude-plugins-official`, then `/reload-plugins`, then `/mcp` → **miro** →
-  **Authenticate** → pick the **CIS 591** team. When Claude asks to use a Miro tool, choose
-  "Yes, and don't ask again".
+- **Miro connected to Claude**, either way works:
+  - the **Miro connector**: claude.ai → Settings → Connectors → Miro → Connect (it then shows up in
+    Claude Code too), or
+  - the **Miro plugin**: in Claude Code type `/plugin install miro@claude-plugins-official`, then
+    `/reload-plugins`, then `/mcp` → **miro** → **Authenticate**.
+  Pick the **CIS 591** team when asked. When Claude asks to use a Miro tool, choose "Yes, and don't ask again".
 
 ## Play in 3 steps
 
