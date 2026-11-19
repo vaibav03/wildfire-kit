@@ -1,6 +1,6 @@
 # Wildfire
 
-A forest fire on a shared Miro board. Your Claude fights it for your team.
+A forest fire on a shared Miro board. Your Claude (or Codex) fights it for your team.
 You type two commands and answer one YES/NO question.
 
 ## Before class (once)
@@ -9,6 +9,8 @@ You type two commands and answer one YES/NO question.
 2. Connect Miro to Claude: claude.ai → Settings → Connectors → Miro → Connect.
    (Or in Claude Code: `/plugin install miro@claude-plugins-official`, `/reload-plugins`, `/mcp` → miro → Authenticate.)
    Pick the **CIS 591** team.
+   Codex instead: `codex mcp add miro --url https://mcp.miro.com/`, then `codex mcp login miro` (or in the
+   Codex app: Plugins → Miro → Add). Pick the **CIS 591** team.
 
 ## In class
 
@@ -16,6 +18,9 @@ You type two commands and answer one YES/NO question.
 2. `cd wildfire-kit && claude`
 3. `/join Your Name` → your card shows your **team** and **role**
 4. `/play` → when the instructor says GO
+
+With Codex: `cd wildfire-kit && codex` (say yes when it asks to trust the folder), then `$join Your Name`
+and `$play`.
 
 Then watch the board. Your Claude plays by itself.
 

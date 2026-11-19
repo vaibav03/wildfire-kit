@@ -11,7 +11,7 @@
    first place on top: % saved, fires set, trees burned, MVP. Each square has a border in its team's color;
    a thicker one on fire shows which team lit it.
 
-3. **What you do.** Type `/join Your Name`, then `/play`. Your Claude may ask you one YES/NO question:
+3. **What you do.** Type `/join Your Name`, then `/play` (Codex: `$join Your Name`, then `$play`). Your Claude may ask you one YES/NO question:
    answer it. That's all.
 
 4. **What the agents do.** One Claude per team is the boss: it finds the fire and writes notes like

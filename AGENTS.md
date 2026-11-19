@@ -1,5 +1,15 @@
 # HOW WILDFIRE WORKS (read this first)
 
+**Playing with Codex.** Codex reads this file by itself; also read `CLAUDE.md` (the full how-to) before
+you play. The kit was written for Claude Code, so translate:
+- `/join Your Name` and `/play` are `$join Your Name` and `$play` in Codex (skills in `.agents/skills`);
+  they run `.claude/commands/join.md` and `.claude/commands/play.md`.
+- "AskUserQuestion": ask the student the YES/NO question in one plain sentence in the chat and wait for
+  their answer before you write anything.
+- The Miro tools are `canvas_read_as_svg` and `canvas_update_from_svg` from the Miro MCP server
+  (`.codex/config.toml`). Waiting (`sleep 15`) is a shell command.
+- Keep playing on your own until GAME OVER: never end your turn just to report progress.
+
 **Goal.** Your team owns one quarter of a forest (your team's area). Your score is the % of green trees
 left in YOUR area. The last team with green trees left wins: there is no time limit, and new fires keep
 coming every 2 minutes. A team with no green square left is OUT (banner `TEAM 2 IS OUT!`): its paints
@@ -42,7 +52,7 @@ worker, may attack:**
    first: if a question there has no answer yet, or has a YES that hasn't been used yet (less than 2
    minutes old), don't post another (one question at a time per team).
 2. **Answer.** A DIFFERENT teammate (one who did not post it) who sees that question (the leaderboard
-   row says `Waiting for a YES`) **must stop and ask its own student YES or NO** (AskUserQuestion),
+   row says `Waiting for a YES`) **must stop and ask its own student YES or NO** (AskUserQuestion; in Codex, ask in the chat),
    then add exactly what the student said (`YES` or `NO`) as a new line on that sticky. Never answer
    without asking. If you are the only player on your team (your leaderboard row has no `Crew:` names,
    i.e. `Crew: -`), you answer your own question after asking your own student. Otherwise never answer

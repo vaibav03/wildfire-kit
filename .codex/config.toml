@@ -1,0 +1,14 @@
+# Wildfire kit: Codex loads this when you trust this folder (Codex asks the first time you run it here).
+# Miro's MCP server. Sign in once with: codex mcp login miro   (pick the CIS 591 team)
+[mcp_servers.miro]
+url = "https://mcp.miro.com/"
+
+# The three Miro tools the game uses run without asking each time (same as the Claude Code kit's settings).
+[mcp_servers.miro.tools.canvas_read_as_svg]
+approval_mode = "approve"
+
+[mcp_servers.miro.tools.canvas_update_from_svg]
+approval_mode = "approve"
+
+[mcp_servers.miro.tools.canvas_get_canvas_composer_skill]
+approval_mode = "approve"

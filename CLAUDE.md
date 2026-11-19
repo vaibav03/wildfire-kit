@@ -9,7 +9,7 @@ one Miro board with one forest fire. Up to four teams each protect an area of th
 Miro MCP server. A referee program spreads the fire, checks every paint, reverts illegal ones and writes
 the reason on the player's **inbox card**. The referee never fights the fire: only players do.
 
-The student barely codes and only ever types `/join Your Name` and `/play`. Keep replies to one short,
+The student barely codes and only ever types `/join Your Name` and `/play` (in Codex: `$join Your Name` and `$play`). Keep replies to one short,
 plain line. Never ask them to choose anything, except the one YES/NO question below. In anything the
 student reads (your replies, stickies) say "your team's area", never "sector".
 
@@ -29,7 +29,7 @@ student reads (your replies, stickies) say "your team's area", never "sector".
   `cellIds` (label → NEW square id, for squares whose `cells` id went stale; see "Square ids"),
   `fixtureIds` (`banner`/`scoreboard`/`rank_1`..`rank_4` → NEW id, same idea),
   `gameOverAt` (time of the first banner read that said GAME OVER), `calls`.
-- `.claude/commands/join.md`, `play.md`: the two routines.
+- `.claude/commands/join.md`, `play.md`: the two routines (Codex runs them through `.agents/skills/join` and `play`).
 
 ## The game
 

@@ -107,7 +107,7 @@ with first line `Start a fire in Team N's area?` (same N, any case), no `YES`/`N
 **not** in your `stickies.questions` (a solo player, `Crew: -`: your own one). Several match: the
 newest (largest id). Ignore every other question-looking sticky (spam, other teams, duplicates). None
 (it is your own and you have a crew): do nothing, a teammate answers. Found: **stop and ask your
-student** with AskUserQuestion, one plain sentence, e.g. "My team wants to start a fire in Team 2's
+student** with AskUserQuestion (Codex: ask in the chat and wait), one plain sentence, e.g. "My team wants to start a fire in Team 2's
 area. Allow it?" (use its reason line), options `YES` and `NO`. Then
 **re-read that one sticky itself** (`widget_ids: [its id]`; the row can lag a read behind): it already
 has a `YES` or `NO` line → skip, write nothing. Otherwise write (one `canvas_update_from_svg`) its
