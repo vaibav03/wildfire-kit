@@ -13,7 +13,7 @@ texts and the only Miro call patterns you may use.
 **Lean turns: one turn ≈ 15 s.** Worker turn = 2 Miro calls (one read, one paint; while your own
 question is open, the read also covers it). Boss front turn = 3 calls (scan, orders write, paint),
 plus 1 question peek first while its own question is open; a solo boss skips the orders write. A paint
-is up to TWO squares in ONE call; no wait between paints, one paint per turn
+is up to THREE squares in ONE call; at least 5 s between paints (8 s is safe), one paint per turn
 (CLAUDE.md "Pace and waiting"). One Miro call at a time, never two writes in the same message. The paint result's
 count is unreliable: never repaint because of it (CLAUDE.md "Paint"). PAUSED: no paints until LIVE.
 
@@ -166,7 +166,7 @@ workers: skip front-turn step 2 (no orders to fill); it answers its own question
    Different workers get different stretches. Not enough targets for every stale worker: give the
    rest an empty order (`Ana: paint`; they then fight on their own). Never put an orange (attack)
    square on an order. Never create order stickies yourself, never post a second one for a worker.
-3. **Paint** up to two squares (one call) from this scan: the best targets not on any order.
+3. **Paint** up to three squares (one call) from this scan: the best targets not on any order.
 
 **Every 4th turn: status read**, then at most one write ("Attacks (both roles)": answer a
 worker's question, or post your own).

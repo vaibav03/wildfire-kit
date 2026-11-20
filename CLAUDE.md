@@ -89,7 +89,7 @@ ANOTHER team's color was lit by that team (its own area's color = wild fire).
 ## Before every paint
 
 The rules are in `AGENTS.md` (above). Paints also need the game to be LIVE and you to have joined.
-The fire spreads every 7 s, so a square you saw 10 s ago may be orange or black now:
+The fire spreads every 15 s, so a square you saw 20 s ago may be orange or black now:
 **always read a square right before painting it**.
 
 ## Stickies: plain sentences, no keywords
@@ -129,7 +129,7 @@ Every call counts against a per-user rate limit and a daily limit. Use only thes
 - **Paint** = **ONE square in ONE `canvas_update_from_svg`**, one `rect`,
   only the id and the fill (`#3aa7ff`; an attack square: `#ff5a1f`):
   `<svg xmlns="http://www.w3.org/2000/svg"><rect data-miro-id="ID1" fill="#3aa7ff"/></svg>`
-  Up to two squares per paint, in one call: a third square in the same paint (or any square within the wait) is reverted. **The update result's count is unreliable** ("Applied diff: 0 updated" or a
+  Up to three squares per paint, in one call: a fourth square in the same paint (or any square within the wait) is reverted. **The update result's count is unreliable** ("Applied diff: 0 updated" or a
   low count even when the squares changed): your inbox card and a later peek are the truth. Never
   repaint just because the count looks low.
   Never change the label text, never send x/y/width/height for a square.
@@ -176,9 +176,10 @@ Every call counts against a per-user rate limit and a daily limit. Use only thes
 
 - **One turn ≈ 15 s with a few small calls** (`play.md` gives each role's exact turn). Keep reads small:
   only the ids you need; banner + inbox + the 4 leaderboard rows only every 4th turn. At most **one paint (up to
-  two squares) per turn**.
-- **No paint cooldown**: paint as soon as your read is done. Only one paint (up to 2 squares) per turn,
-  with a read before it: the referee reads the board every ~3 s, and a third square in one of its reads is undone.
+  three squares) per turn**.
+- **Paint cooldown: at least 5 s between the starts of two blue paints (8 s is safe)**: the referee reads the
+  board every ~3 s on its own clock. One paint (up to 3 squares) per turn, with a read before it; reads in
+  between count toward the wait. A fourth square, or a paint inside the wait, is undone.
 - **One Miro call at a time.** Never send two writes in the same message (e.g. a paint and a sticky
   edit together): send one, wait for its result, then the next.
 - **Budget: cap 150 Miro calls per game**; count them in `player.json` `calls` (lobby peeks before the
@@ -186,7 +187,7 @@ Every call counts against a per-user rate limit and a daily limit. Use only thes
 - **Waiting** ("wait N s" anywhere in the kit): Bash `sleep N`, N at most 15, as its own command
   (never `sleep 30`, never chained like `sleep 15; …` or `sleep 15 && …`). **If Bash refuses or blocks
   the sleep**: don't retry it and don't use `run_in_background` or Monitor; skip the wait and just do
-  the next peek now (a peek takes a few seconds itself). After a write, don't wait. In the lobby or when PAUSED, wait 15 s between peeks.
+  the next peek now (a peek takes a few seconds itself). After a write, don't wait, except to keep the paint cooldown. In the lobby or when PAUSED, wait 15 s between peeks.
 - Miro says rate limit: wait 15 s, retry once. Daily limit: stop and tell the student in one line.
 
 ## Reading the banner
