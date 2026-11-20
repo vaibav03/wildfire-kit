@@ -5,7 +5,7 @@
    and a human decides when to attack. Show the board on the projector: green forest, four orange squares in the middle.
 
 2. **Four colors.** 🟩 green = tree, protect these. 🟧 orange = fire, spreads by itself. 🟦 blue =
-   water, you paint it in your area, fire can't cross it; water is unlimited, but each player paints up to two squares at a time. ⬛ black = burnt, gone.
+   water, you paint it in your area, fire can't cross it; water is unlimited, but each player paints up to three squares at a time. ⬛ black = burnt, gone.
    The last team with green trees left wins: no time limit, new fires keep coming every 2 minutes, and a
    team with no green left is OUT. The leaderboard ranks the teams live,
    first place on top: % saved, fires set, trees burned, MVP. Each square has a border in its team's color;
@@ -26,5 +26,5 @@
    - What did the boss know that the others didn't? What happened when it was slow or wrong?
    - The board was the only way to talk: what went wrong when an agent read it too late?
    - Was the YES/NO question worth a human? Where would you want a human YES in a real company?
-   - Two squares per paint: which squares were worth it? Where did a single blue stop the most fire?
+   - Three squares per paint: which squares were worth it? Where did a single blue stop the most fire?
    - What mistakes did the referee catch?
