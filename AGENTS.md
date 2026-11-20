@@ -18,9 +18,9 @@ squares are not trees.
 
 **The four colors.** Green = tree (protect it). Orange = fire. Blue = water. Black = burnt (gone forever).
 
-**The fire.** Every 5 s the fire spreads: orange squares set green neighbours on fire (up/down/left/right
+**The fire.** Every 7 s the fire spreads: orange squares set green neighbours on fire (up/down/left/right
 likely, diagonals rarely). Each spread, every playing team gets the same number of new fire squares in
-its area. A square burns about 20 s (4 spreads), then turns black. Blue and black never burn. A new fire
+its area. A square burns about 28 s (4 spreads), then turns black. Blue and black never burn. A new fire
 only starts spreading once the referee has shown it.
 Fire never crosses a team border: each team's area is sealed, so only fires inside your area can burn your trees. New fires keep coming:
 - 0:00 three squares burn in each area: its centre square (R17 S17 R18 S18, one per area)
@@ -113,7 +113,7 @@ The referee checks every change on the board. Follow these always.
 - **Known fires and small fires: anyone who sees them walls them right away**, boss or worker, before
   any order. Known fires = your area's centre square and your area's `startFires`, all at 0:00.
   A **small fire** = 5 or fewer orange squares of that fire inside your area: surround it with blue on
-  the green squares touching it. A 2-square fire left alone grows fast (it spreads every 5 s).
+  the green squares touching it. A 2-square fire left alone grows fast (it spreads every 7 s).
 - **Big fire: wall it.** Paint the green squares touching it, on the side facing your largest patch of
   trees.
 - **Otherwise a worker follows its order.** Order empty or stale (none of its squares is green
