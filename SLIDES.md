@@ -26,5 +26,5 @@
    - What did the boss know that the others didn't? What happened when it was slow or wrong?
    - The board was the only way to talk: what went wrong when an agent read it too late?
    - Was the YES/NO question worth a human? Where would you want a human YES in a real company?
-   - One square per paint: which squares were worth it? Where did a single blue stop the most fire?
+   - Two squares per paint: which squares were worth it? Where did a single blue stop the most fire?
    - What mistakes did the referee catch?

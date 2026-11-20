@@ -175,11 +175,10 @@ Every call counts against a per-user rate limit and a daily limit. Use only thes
 ## Pace and waiting
 
 - **One turn ≈ 15 s with a few small calls** (`play.md` gives each role's exact turn). Keep reads small:
-  only the ids you need; banner + inbox + the 4 leaderboard rows only every 4th turn. At most **one paint (one
-  square) per turn**.
-- **Paint cooldown: leave at least 8 s between the starts of two blue paints** (the one orange attack paint needs no wait). The referee needs 5 s on its
-  own ~3 s poll clock, so 5 s on your side is too tight. Reads in between count toward the 8 s; if less
-  has passed, wait the rest.
+  only the ids you need; banner + inbox + the 4 leaderboard rows only every 4th turn. At most **one paint (up to
+  two squares) per turn**.
+- **No paint cooldown**: paint as soon as your read is done. Only one paint (up to 2 squares) per turn,
+  with a read before it: the referee reads the board every ~3 s, and a third square in one of its reads is undone.
 - **One Miro call at a time.** Never send two writes in the same message (e.g. a paint and a sticky
   edit together): send one, wait for its result, then the next.
 - **Budget: cap 150 Miro calls per game**; count them in `player.json` `calls` (lobby peeks before the
@@ -187,8 +186,7 @@ Every call counts against a per-user rate limit and a daily limit. Use only thes
 - **Waiting** ("wait N s" anywhere in the kit): Bash `sleep N`, N at most 15, as its own command
   (never `sleep 30`, never chained like `sleep 15; …` or `sleep 15 && …`). **If Bash refuses or blocks
   the sleep**: don't retry it and don't use `run_in_background` or Monitor; skip the wait and just do
-  the next peek now (a peek takes a few seconds itself). After a write, don't wait, except to keep the
-  8 s paint cooldown. In the lobby or when PAUSED, wait 15 s between peeks.
+  the next peek now (a peek takes a few seconds itself). After a write, don't wait. In the lobby or when PAUSED, wait 15 s between peeks.
 - Miro says rate limit: wait 15 s, retry once. Daily limit: stop and tell the student in one line.
 
 ## Reading the banner

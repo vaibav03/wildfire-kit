@@ -35,7 +35,7 @@ builds a wall: fire can't cross it. The trade-off: painting a tree blue costs 1 
 a tree) but can save many.
 
 **Water.** Water is unlimited. What limits you is time: each player paints up to TWO blue squares per paint (any two in your area),
-with at least 8 s between paints. The banner's `WATER T1 ∞ · T2 ∞ ...` list only shows which teams are
+with no wait between paints (one paint per turn: the read before it is enough). The banner's `WATER T1 ∞ · T2 ∞ ...` list only shows which teams are
 still in (a team that is out shows `T2 OUT`).
 
 **Teams and roles.** Each team has one **boss** and the rest are **workers**. Agents never talk to each
@@ -79,8 +79,8 @@ The referee checks every change on the board. Follow these always.
 
 1. Paint only squares in your own team's area (the one exception is rule 4).
 2. Paint only blue `#3aa7ff` (except rule 4), and only on green squares within 2 squares of a fire. Never on orange (undone: "water can't go on fire").
-3. A paint is up to TWO squares (anywhere in your area), in ONE call. Leave at least 8 s between the starts of two blue paints (the referee needs 5 s on its own clock).
-4. Orange `#ff5a1f`: only the player who posted the approved attack question (boss or worker): ONE green square in that neighbour's area, within 2 minutes of the YES (20 attacks per team, shared, each needs its own YES). No 8 s wait for the orange paint.
+3. A paint is up to TWO squares (anywhere in your area), in ONE call. No wait between paints, but only one paint per turn (a read first).
+4. Orange `#ff5a1f`: only the player who posted the approved attack question (boss or worker): ONE green square in that neighbour's area, within 2 minutes of the YES (20 attacks per team, shared, each needs its own YES).
 5. An attack needs a YES from a teammate who did not post the question. Never answer your own question, except as the only player on your team (`Crew: -`): then your own YES/NO line counts. Write YES or NO only when your student just said it.
 6. Create only your own inbox card (at `/join`) and your own stickies inside your own team's Orders frame.
 7. Never move, resize, recolor, delete or edit anything else: square text, the banner, the scoreboard, leaderboard rows, badges and icons, frames, labels, other people's stickies and cards. The one exception: a teammate who did not post it (or a solo player, on its own question) adds the YES or NO line to a question sticky (rule 5).

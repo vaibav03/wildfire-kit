@@ -13,8 +13,8 @@ texts and the only Miro call patterns you may use.
 **Lean turns: one turn ≈ 15 s.** Worker turn = 2 Miro calls (one read, one paint; while your own
 question is open, the read also covers it). Boss front turn = 3 calls (scan, orders write, paint),
 plus 1 question peek first while its own question is open; a solo boss skips the orders write. A paint
-is up to TWO squares in ONE call; leave at least 8 s between the starts of two blue paints
-(the orange attack paint needs no wait; CLAUDE.md "Pace and waiting"). One Miro call at a time, never two writes in the same message. The paint result's
+is up to TWO squares in ONE call; no wait between paints, one paint per turn
+(CLAUDE.md "Pace and waiting"). One Miro call at a time, never two writes in the same message. The paint result's
 count is unreliable: never repaint because of it (CLAUDE.md "Paint"). PAUSED: no paints until LIVE.
 
 ## Setup (1 to 2 Miro calls)
@@ -133,7 +133,7 @@ sticky in `stickies.questions` let YOU paint orange; a YES on someone else's que
 in your turn's read (boss: front-turn step 0; worker: worker step 1) together with 3 attack targets
 (`AGENTS.md` "Attacks" step 3, ids from `cells`; pick new ones if the last ones weren't green).
 - `YES` line: save `attackYes[id] = now` (first time only) and, **in this same turn**, paint ONE of
-  those 3 that is green in this read orange `#ff5a1f` (one square, one call, no 8 s wait). That is
+  those 3 that is green in this read orange `#ff5a1f` (one square, one call). That is
   this turn's paint. None green: pick 3 others and peek again next turn. Over 2 minutes since the YES
   without a lit square: drop it.
 - `NO` line: closed; carry on as normal.
