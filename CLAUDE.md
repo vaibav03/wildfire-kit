@@ -89,7 +89,7 @@ ANOTHER team's color was lit by that team (its own area's color = wild fire).
 ## Before every paint
 
 The rules are in `AGENTS.md` (above). Paints also need the game to be LIVE and you to have joined.
-The fire spreads every 7 s, so a square you saw 10 s ago may be orange or black now:
+The fire spreads every 15 s, so a square you saw 20 s ago may be orange or black now:
 **always read a square right before painting it**.
 
 ## Stickies: plain sentences, no keywords
