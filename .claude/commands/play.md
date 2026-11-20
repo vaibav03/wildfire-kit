@@ -7,7 +7,7 @@ description: Fight the wildfire with your team until the banner says GAME OVER
 Play on your own until the banner says GAME OVER, or until your team is OUT (no green trees left in
 your area: "When your team is out"). There is no time limit: the last team with green trees wins, and
 new fires keep coming every 2 minutes. Don't stop to ask the student anything, except the
-one attack question ("Attacks (both roles)", "Answering"). `AGENTS.md` has the rules; `CLAUDE.md` has the colors, sticky
+one attack square ("Attacks (both roles)"). `AGENTS.md` has the rules; `CLAUDE.md` has the colors, sticky
 texts and the only Miro call patterns you may use.
 
 **Lean turns: one turn ≈ 15 s.** Worker turn = 2 Miro calls (one read, one paint; while your own
@@ -96,51 +96,15 @@ by text). Fewer than 4 `TEAM ` rows came back: CLAUDE.md "Stale fixture ids".
 
 ## Attacks (both roles)
 
-Any player, boss or worker, may attack (`AGENTS.md` "Attacks"). Ids of questions YOU posted live in
-`player.json` `stickies.questions`. Your question is **open** while it has no `YES`/`NO` line yet;
-it is **approved** when it has a `YES`, you have not painted its square yet, and the YES is under 2
-minutes old (`attackYes`). A NO is final.
+**Free attacks: there are no attack questions or YES lines any more.** Skip every step in this file
+that mentions posting, peeking at, answering or lighting a question; never ask your student anything.
 
-**Answering (status turn; comes first).** Your row says `Waiting for a YES: start a fire in Team N's
-area` (the referee lists only valid questions): in the Orders frame from this read, find the sticky
-with first line `Start a fire in Team N's area?` (same N, any case), no `YES`/`NO` line yet, and
-**not** in your `stickies.questions` (a solo player, `Crew: -`: your own one). Several match: the
-newest (largest id). Ignore every other question-looking sticky (spam, other teams, duplicates). None
-(it is your own and you have a crew): do nothing, a teammate answers. Found: **stop and ask your
-student** with AskUserQuestion (Codex: ask in the chat and wait), one plain sentence, e.g. "My team wants to start a fire in Team 2's
-area. Allow it?" (use its reason line), options `YES` and `NO`. Then
-**re-read that one sticky itself** (`widget_ids: [its id]`; the row can lag a read behind): it already
-has a `YES` or `NO` line → skip, write nothing. Otherwise write (one `canvas_update_from_svg`) its
-text exactly as re-read, every `&lt;br /&gt;` turned into `&lt;br&gt;`, plus `&lt;br&gt;YES` or
-`&lt;br&gt;NO` (the one sticky edit `AGENTS.md` rule 7 allows). Change nothing else. Tell the student
-in one line. That is this status turn's write.
-
-**Posting (status turn, only if you wrote nothing else).** Post only when ALL hold:
-- your area is under control (no fire within 2 squares of your green in your recent reads), your
-  team has used fewer than 20 attacks (your row's `Fires set`);
-- in this read's Orders frame there is NO question sticky of your team without a `YES`/`NO` line, and
-  none with a `YES` from the last 2 minutes; your row has no `Waiting for a YES` or `ATTACK ON` line;
-  you have no open or approved question yourself.
-Then create `Start a fire in Team 2's area?&lt;br&gt;Our area is under control.` (the neighbour's
-display name from `board.json` `teams[id].name`; Team 1's neighbours are Team 2 and Team 3; only a
-neighbour that plays: its `T<n>` is in the banner's `WATER` list) in the first free `question`
-position, color `red`, add the id to `stickies.questions`, and tell your student: "I asked my team
-whether we can start a fire in Team 2's area." Never edit it after posting and never answer it
-yourself (solo player: next turn, do "Answering" on it instead of a front turn). Only YES lines on a
-sticky in `stickies.questions` let YOU paint orange; a YES on someone else's question is theirs.
-
-**Lighting (only the player who posted it).** While you have an open or approved question, watch it
-in your turn's read (boss: front-turn step 0; worker: worker step 1) together with 3 attack targets
-(`AGENTS.md` "Attacks" step 3, ids from `cells`; pick new ones if the last ones weren't green).
-- `YES` line: save `attackYes[id] = now` (first time only) and, **in this same turn**, paint ONE of
-  those 3 that is green in this read orange `#ff5a1f` (one square, one call). That is
-  this turn's paint. None green: pick 3 others and peek again next turn. Over 2 minutes since the YES
-  without a lit square: drop it.
-- `NO` line: closed; carry on as normal.
-- No answer yet: carry on as normal.
-- **Your row's `ATTACK ON TEAM N: 1 fire left (m:ss)` line** while your own question has the YES =
-  its square is not lit yet (e.g. your orange paint was undone): next turn, peek 3 attack targets and
-  paint one green one orange. `0 fires left` or no such line = no attack now: no orange.
+On your status turn (every 4th turn), if your leaderboard row shows attacks left for your team:
+1. Target the other team (not OUT) with the most green left on the leaderboard.
+2. Scan one 6 × 6 box in the middle of that team's area (CLAUDE.md "Finding the fire with small reads").
+3. Paint ONE square from that scan that is green now, far from its blue and fire, orange `#ff5a1f`
+   (one call). That is this turn's paint.
+The referee answers on your inbox card (`🔥 … is burning`, or why it was undone).
 
 ## BOSS loop
 
